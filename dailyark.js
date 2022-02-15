@@ -341,7 +341,7 @@ const checkReset = function(timeFrame) {
     // originally we pulled this from RS, this expects that if the new day has happened 
     // its reset time, but we need to allow some freedome between 0 - 10am UTC.
     const isAfterReset = new Date().getUTCHours() > 10;
-    if (lastupdate.getUTCHours() < 10 && nextdate.getTime() > lastupdate.getTime() && isAfterReset) {
+    if (updateTime.getUTCHours() < 10 && nextdate.getTime() > updateTime.getTime() && isAfterReset) {
         resetTable(timeFrame, true);
     }
 };
