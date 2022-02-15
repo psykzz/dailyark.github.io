@@ -315,7 +315,7 @@ const hidableSection = function(timeFrame) {
  * @returns
  */
 const checkReset = function(timeFrame) {
-    const resetHour = 10;
+    const resetHour = 8;
     
     let tableUpdateTime = storage.getItem(profilePrefix + timeFrame + '-updated') ?? 'false';
 
