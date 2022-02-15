@@ -325,7 +325,7 @@ const checkReset = function(timeFrame) {
 
 
     let nextdate = new Date();
-    nextdate.setUTCHours(10);
+    nextdate.setUTCHours(8);
     nextdate.setUTCMinutes(0);
     nextdate.setUTCSeconds(0);
 
