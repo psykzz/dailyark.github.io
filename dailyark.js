@@ -336,7 +336,12 @@ const checkReset = function(timeFrame) {
         nextdate.setUTCDate(nextdate.getUTCDate() - weekmodifier);
     }
 
-    if (updateTime.getTime() < nextdate.getTime()) {
+    
+    // Checking for the update for the daily timeframe is a little more complex because 
+    // originally we pulled this from RS, this expects that if the new day has happened 
+    // its reset time, but we need to allow some freedome between 0 - 10am UTC.
+    const isAfterReset = new Date().getUTCHours() > 10;
+    if (lastupdate.getUTCHours() < 10 && nextdate.getTime() > lastupdate.getTime() && isAfterReset) {
         resetTable(timeFrame, true);
     }
 };
